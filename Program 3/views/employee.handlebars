@@ -1,0 +1,72 @@
+<html>
+<h1>Company Database</h1>
+<h2>Current Employees:</h2>
+{{#if PNO}}
+    <h4>Project Number {{PNO}}: {{Pname}} located in {{Plocation}}</h4>
+{{/if}}
+{{#if SEARCH}}
+    <h4>Search by first name starting with {{SEARCH}}</h4>
+{{/if}}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #0000FF;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #AED6F1;
+}
+</style>
+<table id="t01">
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Salary</th>
+        <th>Dno</th>  
+    </thead> 
+    <tbody>
+        {{#each employee}} 
+        <tr> 
+            <td>{{Fname}}</td> 
+            <td>{{Lname}}</td> 
+            <td>{{Salary}}</td> 
+            <td>{{Dno}}</td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+<p>
+<form id='filter_employee' action='' method=''>
+<!--- this form does not submit directly, the button handles all the interaction with backend -->
+    <label> Filter by Project </label>
+    <select id='project_filter' name="project"> 
+        {{#each projects}}
+        <option value="{{Pnumber}}">{{Pname}}</option>
+        {{/each}}
+         <input type="button" value="Filter" onclick="filterEmployeeByProject()">
+          <a href="/employee" class="green_button"> Clear Filters</a>
+    </select><br>
+</form>
+<p>
+<form id='search_employee' action='' method=''>
+<!--- this form does not submit directly, the button handles all the interaction with backend -->
+    <label> Search Employees for first name starting with:</label>
+    <input id='first_name_search_string' type='text' name='first_name_search_string' value=''>
+    <input type="button" value="Search" onclick="searchEmployeesByFirstName()">
+</form>
+
+ 
+
+    <div style="position: absolute; bottom: 5px">
+    by Tan Ton
+    </div>
+</div>
+
+</html>

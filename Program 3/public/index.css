@@ -1,0 +1,42 @@
+/* Solid border */
+hr.solid {
+  border-top: 2px solid #bbb;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+thead{
+  padding-top: 10px;
+  font-weight: 100;
+  border-bottom: solid 0px black;
+  text-align: left;
+  font-size: 18px;
+  color: white;
+  background-color: black;
+
+}
+tr:nth-child(even) {background-color: #e1ebec;}
+
+.green_button{
+  background-color: #588e8a; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px;
+}
+#clear_button{
+  color: white;
+}
+a:link{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+}
